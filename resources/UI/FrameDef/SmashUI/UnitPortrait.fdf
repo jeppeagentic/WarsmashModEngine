@@ -45,7 +45,7 @@ Frame "SIMPLEFRAME" "UnitPortrait" {
 
 Frame "SIMPLEFRAME" "UnitPortrait2" {
 	DecorateFileNames,
-    SetPoint BOTTOMLEFT,"UnitPortrait",BOTTOMRIGHT,0.01,0,
+    SetPoint BOTTOMLEFT,"ConsoleUI",BOTTOMLEFT,0.3045,0,
 	Width 0.0835,
 	Height 0.114,
 
