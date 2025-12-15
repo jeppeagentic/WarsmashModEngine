@@ -42,3 +42,29 @@ Frame "SIMPLEFRAME" "UnitPortrait" {
     	FontColor 1.0 1.0 1.0 1.0,
     }
 }
+
+Frame "SIMPLEFRAME" "UnitPortrait2" {
+	DecorateFileNames,
+    SetPoint BOTTOMLEFT,"UnitPortrait",BOTTOMRIGHT,0.01,0,
+	Width 0.0835,
+	Height 0.114,
+
+    Frame "SIMPLEFRAME" "UnitPortraitModel2" {
+		DecorateFileNames,
+    	SetPoint BOTTOM,"UnitPortrait2",BOTTOM,0,0.0285,
+		Width 0.0835,
+		Height 0.085,
+	}
+
+    String "UnitPortraitHitPointText2" INHERITS "UnitPortraitTextTemplate" {
+        Anchor BOTTOM, 0, 0.014,
+        FontJustificationH JUSTIFYCENTER,
+    	FontColor 0.0 1.0 0.0 1.0,
+    }
+
+    String "UnitPortraitManaPointText2" INHERITS "UnitPortraitTextTemplate" {
+        Anchor BOTTOM, 0, -0.0005,
+        FontJustificationH JUSTIFYCENTER,
+    	FontColor 1.0 1.0 1.0 1.0,
+    }
+}

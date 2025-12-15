@@ -242,6 +242,10 @@ public class MeleeUI implements CUnitStateListener, CommandButtonListener, Comma
 	private StringFrame unitLifeText;
 	private StringFrame unitManaText;
 	private Portrait portrait;
+	private Portrait portrait2;
+	private SimpleFrame unitPortrait2;
+	private StringFrame unitLifeText2;
+	private StringFrame unitManaText2;
 	private final Rectangle tempRect = new Rectangle();
 	private final Vector2 projectionTemp1 = new Vector2();
 	private final Vector2 projectionTemp2 = new Vector2();
@@ -725,6 +729,12 @@ public class MeleeUI implements CUnitStateListener, CommandButtonListener, Comma
 
 		this.unitLifeText = (StringFrame) this.rootFrame.getFrameByName("UnitPortraitHitPointText", 0);
 		this.unitManaText = (StringFrame) this.rootFrame.getFrameByName("UnitPortraitManaPointText", 0);
+
+		// Create second portrait
+		this.portrait2 = new Portrait(this.war3MapViewer, this.portraitScene);
+		this.unitPortrait2 = (SimpleFrame) this.rootFrame.createSimpleFrame("UnitPortrait2", this.consoleUI, 0);
+		this.unitLifeText2 = (StringFrame) this.rootFrame.getFrameByName("UnitPortraitHitPointText2", 0);
+		this.unitManaText2 = (StringFrame) this.rootFrame.getFrameByName("UnitPortraitManaPointText2", 0);
 
 		final float infoPanelUnitDetailWidth = GameUI.convertY(this.uiViewport, 0.180f);
 		final float infoPanelUnitDetailHeight = GameUI.convertY(this.uiViewport, 0.120f);
@@ -1595,6 +1605,11 @@ public class MeleeUI implements CUnitStateListener, CommandButtonListener, Comma
 		if (this.portrait.isResetNeeded()) {
 			this.portrait.resetCinematicSequence();
 			this.portrait.setSelectedUnit(this.selectedUnit);
+		}
+		this.portrait2.update(deltaTime);
+		if (this.portrait2.isResetNeeded()) {
+			this.portrait2.resetCinematicSequence();
+			this.portrait2.setSelectedUnit(this.selectedUnit);
 		}
 		if (this.cinematicPanel.isVisible()) {
 			this.cinematicPortrait.update(deltaTime);
@@ -2994,6 +3009,7 @@ public class MeleeUI implements CUnitStateListener, CommandButtonListener, Comma
 			this.selectedUnit.getSimulationUnit().removeStateListener(this);
 		}
 		this.portrait.setSelectedUnit(unit);
+		this.portrait2.setSelectedUnit(unit);
 		this.selectedUnit = unit;
 		setDraggingItem(null);
 		if (unit == null) {
