@@ -721,7 +721,9 @@ public class MeleeUI implements CUnitStateListener, CommandButtonListener, Comma
 
 		// Create the unit portrait stuff
 		this.portrait = new Portrait(this.war3MapViewer, this.portraitScene);
+		System.out.println("[DEBUG] Creating UnitPortrait frame...");
 		this.unitPortrait = (SimpleFrame) this.rootFrame.createSimpleFrame("UnitPortrait", this.consoleUI, 0);
+		System.out.println("[DEBUG] UnitPortrait created: " + this.unitPortrait);
 		final SimpleFrame unitPortraitModel = (SimpleFrame) this.rootFrame.getFrameByName("UnitPortraitModel", 0);
 		this.clickablePortrait = new ClickablePortrait("SmashClickablePortrait", unitPortraitModel);
 		this.clickablePortrait.setSetAllPoints(true);
@@ -732,7 +734,9 @@ public class MeleeUI implements CUnitStateListener, CommandButtonListener, Comma
 
 		// Create second portrait
 		this.portrait2 = new Portrait(this.war3MapViewer, this.portraitScene);
+		System.out.println("[DEBUG] Creating UnitPortrait2 frame...");
 		this.unitPortrait2 = (SimpleFrame) this.rootFrame.createSimpleFrame("UnitPortrait2", this.consoleUI, 0);
+		System.out.println("[DEBUG] UnitPortrait2 created: " + this.unitPortrait2);
 		this.unitLifeText2 = (StringFrame) this.rootFrame.getFrameByName("UnitPortraitHitPointText2", 0);
 		this.unitManaText2 = (StringFrame) this.rootFrame.getFrameByName("UnitPortraitManaPointText2", 0);
 

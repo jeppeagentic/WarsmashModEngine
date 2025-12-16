@@ -1515,6 +1515,15 @@ public final class GameUI extends AbstractUIFrame implements UIFrame {
 			for (final SetPointDefinition setPointDefinition : frameDefinition.getSetPoints()) {
 				final UIFrame otherFrameByName = getFrameByName(setPointDefinition.getOther(),
 						0 /* TODO: createContext */);
+				if (frameDefinition.getName().contains("UnitPortrait")) {
+					System.out.println("[DEBUG] SetPoint for " + frameDefinition.getName() +
+							": myPoint=" + setPointDefinition.getMyPoint() +
+							", other=" + setPointDefinition.getOther() +
+							", otherPoint=" + setPointDefinition.getOtherPoint() +
+							", x=" + setPointDefinition.getX() +
+							", y=" + setPointDefinition.getY() +
+							", otherFrame=" + (otherFrameByName != null ? "FOUND" : "NULL"));
+				}
 				if (otherFrameByName == null) {
 					System.err.println("Failing to pin " + frameDefinition.getName() + " to "
 							+ setPointDefinition.getOther() + " because it was null!");

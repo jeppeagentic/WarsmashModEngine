@@ -319,8 +319,8 @@ public abstract class AbstractRenderableFrame implements UIFrame {
 				this.renderBounds.y = centerVerticalAnchor.getY(gameUI, viewport) - (this.renderBounds.height / 2);
 			}
 		}
-		if (DEBUG_LOG) {
-			System.out.println(getClass().getSimpleName() + ":" + this.name + ":" + hashCode()
+		if (DEBUG_LOG && (this.name.contains("UnitPortrait") || this.name.equals("ConsoleUI"))) {
+			System.out.println("[DEBUG POSITION] " + getClass().getSimpleName() + ":" + this.name + ":" + hashCode()
 					+ " finishing position bounds: " + this.renderBounds);
 		}
 		innerPositionBounds(gameUI, viewport);
